@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, LoadingController } from '@ionic/angular';
 import { AddFoodComponent } from 'src/app/components/add-food/add-food.component';
 import { FoodService } from 'src/app/service/food.service';
 
@@ -10,19 +10,36 @@ import { FoodService } from 'src/app/service/food.service';
 })
 export class FoodsPage implements OnInit {
   foods: any[] = [];
+  loading: any;
 
   constructor(
     private allFood: FoodService,
-    private modalCtrl: ModalController
-  ) { }
+    private modalCtrl: ModalController,
+    private loadingCtrl: LoadingController
+  ) {}
+
+  async presentLoading() {
+    this.loading = await this.loadingCtrl.create({
+      message: 'Cargando...',
+    });
+    await this.loading.present();
+  }
+
+  async dismissLoading() {
+    if (this.loading) {
+      await this.loading.dismiss();
+    }
+  }
 
   ngOnInit() {
+    this.presentLoading();
     this.getFoods();
   }
 
   getFoods() {
     this.allFood.getFoods().subscribe((res: any) => {
       this.foods = res.productos;
+      this.dismissLoading();
     });
   }
 
@@ -32,7 +49,9 @@ export class FoodsPage implements OnInit {
       initialBreakpoint: 0.8,
     });
     modal.onDidDismiss().then(() => {
+      this.presentLoading();
       this.getFoods();
+      this.dismissLoading();
     });
     return await modal.present();
   }
