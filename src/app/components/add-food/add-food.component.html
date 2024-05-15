@@ -36,14 +36,6 @@
               Description is required.
             </ion-text>
           </ion-item>
-          <!-- <ion-item [class.invalid]="foodForm.controls['imageUrl'].invalid && foodForm.controls['imageUrl'].touched">
-            <ion-label position="floating">Image URL</ion-label>
-            <ion-input type="text" formControlName="imageUrl"></ion-input>
-            <ion-text *ngIf="foodForm.controls['imageUrl'].invalid && foodForm.controls['imageUrl'].touched"
-              color="danger">
-              Image URL is required.
-            </ion-text>
-          </ion-item> -->
         </ion-col>
       </ion-row>
       <ion-button expand="block" (click)="addFood()" style="margin: 10px;" [disabled]="foodForm.invalid">Add

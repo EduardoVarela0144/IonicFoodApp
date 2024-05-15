@@ -1,0 +1,31 @@
+<ion-toolbar>
+  <ion-title></ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="closeModal()">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+
+<ion-content>
+  <form [formGroup]="categoryForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item [class.invalid]="categoryForm.controls['name'].invalid && categoryForm.controls['name'].touched">
+            <ion-label position="floating">Name</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+            <ion-text *ngIf="categoryForm.controls['name'].invalid && categoryForm.controls['name'].touched" color="danger">
+              Name is required.
+            </ion-text>
+          </ion-item>
+          
+        
+        </ion-col>
+      </ion-row>
+      <ion-button expand="block" (click)="addcategory()" style="margin: 10px;" [disabled]="categoryForm.invalid">Add
+        category</ion-button>
+    </ion-grid>
+  </form>
+</ion-content>
