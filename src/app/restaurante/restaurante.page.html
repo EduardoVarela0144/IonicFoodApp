@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles del Restaurante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="restaurante">
+    <img src="https://www.withfor.com/wp-content/uploads/2022/07/696c745675e78971ed170d16d26efdac-1200x800.jpg" alt="Imagen del restaurante">
+
+    <ion-card-header>
+      <ion-card-title>{{ restaurante.name }}</ion-card-title>
+      <ion-card-subtitle>{{ restaurante.type }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ restaurante.description }}</p>
+      <p>Dirección: {{ restaurante.address }}</p>
+      <p>Teléfono: {{ restaurante.phone }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

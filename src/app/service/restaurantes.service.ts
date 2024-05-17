@@ -11,4 +11,8 @@ export class RestaurantesService {
   getRestaurantes() {
     return this.http.get(apiUrl + 'restaurantes');
   }
+
+  getRestauranteDetalle(id: number) {
+    return this.http.get(apiUrl + 'restaurantes/' + id);
+  }
 }

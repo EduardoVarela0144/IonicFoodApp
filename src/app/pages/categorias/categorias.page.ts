@@ -34,7 +34,7 @@ export class CategoriasPage implements OnInit {
   }
 
   ngOnInit() {
-    this.presentLoading();
+    // this.presentLoading();
     this.getCategories();
   }
 

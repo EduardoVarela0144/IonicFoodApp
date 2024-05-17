@@ -23,6 +23,14 @@ const routes: Routes = [
   {
     path: 'resturantes',
     loadChildren: () => import('./pages/resturantes/resturantes.module').then( m => m.ResturantesPageModule)
+  },
+  {
+    path: 'restaurante',
+    loadChildren: () => import('./restaurante/restaurante.module').then( m => m.RestaurantePageModule)
+  },
+  {
+    path: 'restaurante/:id', 
+    loadChildren: () => import('./restaurante/restaurante.module').then( m => m.RestaurantePageModule)
   }
 ];
 
