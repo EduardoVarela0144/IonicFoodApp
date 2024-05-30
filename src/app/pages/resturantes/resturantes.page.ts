@@ -21,7 +21,7 @@ export class ResturantesPage implements OnInit {
 
   getRestaurantes() {
     this.allRestaurant.getRestaurantes().subscribe((res: any) => {
-      this.Restaurantes = res.restaurantes;
+      this.Restaurantes = res.restaurants;
     });
   }
 

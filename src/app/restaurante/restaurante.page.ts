@@ -28,7 +28,7 @@ export class RestaurantePage implements OnInit {
   getRestauranteDetalle() {
     if (this.restauranteId) {
       this.restaurantService.getRestauranteDetalle(this.restauranteId).subscribe((res: any) => {
-        this.restaurante = res.restaurants;
+        this.restaurante = res.restaurant;
         console.log(res)
       });
     }

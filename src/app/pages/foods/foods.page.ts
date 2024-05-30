@@ -32,14 +32,14 @@ export class FoodsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.presentLoading();
+    // this.presentLoading();
     this.getFoods();
   }
 
   getFoods() {
     this.allFood.getFoods().subscribe((res: any) => {
       this.foods = res.products;
-      this.dismissLoading();
+      // this.dismissLoading();
     });
   }
 
@@ -49,9 +49,9 @@ export class FoodsPage implements OnInit {
       initialBreakpoint: 0.8,
     });
     modal.onDidDismiss().then(() => {
-      this.presentLoading();
+      // this.presentLoading();
       this.getFoods();
-      this.dismissLoading();
+      // this.dismissLoading();
     });
     return await modal.present();
   }
