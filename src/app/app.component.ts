@@ -9,7 +9,7 @@ export class AppComponent {
     { title: 'Foods', url: '/foods', icon: 'fast-food' },
     { title: 'Categorías', url: '/categorias', icon: 'archive' },
     { title: 'Restaurantes', url: '/resturantes', icon: 'beer' },
-    { title: 'Usuarios', url: '/users', icon: 'person' },
+    { title: 'Usuarios', url: '/user', icon: 'person' },
   ];
   constructor() {}
 }
