@@ -1,13 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>user</ion-title>
+    <ion-title>Menu</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <!-- <ion-button (click)="formFood()">
+        <ion-icon name="add"/>
+      </ion-button> -->
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">user</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let user of users">
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+
+      </ion-avatar>
+      <ion-label>{{user.firstName}} {{user.lastName}} {{user.middleName}} </ion-label>
+      <b>{{user.phone}}</b>
+      <ion-button slot="end" fill="clear">
+        <ion-icon color="danger" slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
