@@ -13,11 +13,11 @@ export class CategoryService {
   ) { }
 
   getCategorias() {
-    return this.http.get(apiUrl + 'categorias');
+    return this.http.get(apiUrl + 'categories');
   }
 
   addCategoria(data: any) {
     console.log(data);
-    return this.http.post(apiUrl + 'categorias', data);
+    return this.http.post(apiUrl + 'categories', data);
   }
 }

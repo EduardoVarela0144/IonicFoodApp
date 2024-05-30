@@ -9,10 +9,10 @@ const apiUrl = 'http://127.0.0.1:8000/api/';
 export class RestaurantesService {
   constructor(private http: HttpClient) {}
   getRestaurantes() {
-    return this.http.get(apiUrl + 'restaurantes');
+    return this.http.get(apiUrl + 'restaurants');
   }
 
   getRestauranteDetalle(id: number) {
-    return this.http.get(apiUrl + 'restaurantes/' + id);
+    return this.http.get(apiUrl + 'restaurants/' + id);
   }
 }

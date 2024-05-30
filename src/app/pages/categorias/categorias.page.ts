@@ -40,7 +40,7 @@ export class CategoriasPage implements OnInit {
 
   getCategories() {
     this.allCategory.getCategorias().subscribe((res: any) => {
-      this.Categories = res.categorias;
+      this.Categories = res.categories;
       this.dismissLoading();
     });
   }

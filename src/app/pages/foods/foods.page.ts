@@ -38,7 +38,7 @@ export class FoodsPage implements OnInit {
 
   getFoods() {
     this.allFood.getFoods().subscribe((res: any) => {
-      this.foods = res.productos;
+      this.foods = res.products;
       this.dismissLoading();
     });
   }
