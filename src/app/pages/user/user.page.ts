@@ -42,4 +42,10 @@ export class UserPage implements OnInit {
     return await modal.present();
   }
 
+  deleteUser(userId: number) {
+    this.allUser.deleteUser(userId).subscribe(() => {
+      this.getUsers();
+    });
+  }
+
 }
