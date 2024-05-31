@@ -29,4 +29,17 @@ export class UserPage implements OnInit {
     });
   }
 
+  async formUser() {
+    const modal = await this.modalCtrl.create({
+      component: UserAddComponentComponent,
+      initialBreakpoint: 0.8,
+    });
+    modal.onDidDismiss().then(() => {
+      // this.presentLoading();
+      this.getUsers();
+      // this.dismissLoading();
+    });
+    return await modal.present();
+  }
+
 }

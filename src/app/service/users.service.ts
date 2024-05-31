@@ -13,5 +13,10 @@ export class UsersService {
     return this.http.get(apiUrl + 'users');
   }
 
+
+  addUser(data: any) {
+    return this.http.post(apiUrl + 'users', data);
+  }
+
  
 }

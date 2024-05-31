@@ -1,3 +1,48 @@
-<p>
-  user-add-component works!
-</p>
+<ion-toolbar>
+  <ion-title>Agregar Usuario</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="closeModal()">
+      <ion-icon slot="icon-only" firstName="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <form [formGroup]="userForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item [class.invalid]="userForm.controls['firstName'].invalid && userForm.controls['firstName'].touched">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" formControlName="firstName"></ion-input>
+            <ion-text *ngIf="userForm.controls['firstName'].invalid && userForm.controls['firstName'].touched" color="danger">
+              El nombre es requerido.
+            </ion-text>
+          </ion-item>
+          <ion-item [class.invalid]="userForm.controls['middleName'].invalid && userForm.controls['middleName'].touched">
+            <ion-label position="floating">Segundo Nombre</ion-label>
+            <ion-input type="text" formControlName="middleName"></ion-input>
+            <ion-text *ngIf="userForm.controls['middleName'].invalid && userForm.controls['middleName'].touched" color="danger">
+              El segundo nombre es requerido.
+            </ion-text>
+          </ion-item>
+          <ion-item [class.invalid]="userForm.controls['lastName'].invalid && userForm.controls['lastName'].touched">
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input type="text" formControlName="lastName"></ion-input>
+            <ion-text *ngIf="userForm.controls['lastName'].invalid && userForm.controls['lastName'].touched" color="danger">
+              El apellido es requerido.
+            </ion-text>
+          </ion-item>
+          <ion-item [class.invalid]="userForm.controls['phone'].invalid && userForm.controls['phone'].touched">
+            <ion-label position="floating">Teléfono</ion-label>
+            <ion-input type="text" formControlName="phone"></ion-input>
+            <ion-text *ngIf="userForm.controls['phone'].invalid && userForm.controls['phone'].touched" color="danger">
+              El teléfono es requerido.
+            </ion-text>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-button expand="block" (click)="addUser()" style="margin: 10px;" [disabled]="userForm.invalid">Agregar Usuario</ion-button>
+    </ion-grid>
+  </form>
+</ion-content>
